@@ -4,7 +4,15 @@ This repository hosts the configuration files used in CORD deployment.
 This does not work in any environment other than mine.
 However, this is still a very good example to take a look.
 
-## network-cfg-ext-vr.json
+## cord-olt.json
+
+OLT configuration
+
+## cord-vtn.json
+
+VTN configuration
+
+## cord-fabric-ext-vr.json
 
 A network-cfg.json example includes the following features
 (works with ONOS after commit 852dabf100262d07475b82b8ddc3cc42afe370a9)
@@ -37,6 +45,6 @@ A network-cfg.json example includes the following features
 * Interface exclusion
     - exclude vrouterpeer1
 
-## cord.cell
+## cord-fabric.cell
 
-The cell configuration used for CORD deployment
+The cell configuration used for CORD fabric deployment
