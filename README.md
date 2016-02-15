@@ -48,3 +48,7 @@ A network-cfg.json example includes the following features
 ## cord-fabric.cell
 
 The cell configuration used for CORD fabric deployment
+
+## cord-fabric-topo.svg
+
+Network topology
