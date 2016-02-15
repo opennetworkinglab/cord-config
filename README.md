@@ -1,8 +1,8 @@
 # Configuration files for CORD deployment
 
-This repository hosts the configuration files used in CORD deployment.
-This does not work in any environment other than mine.
-However, this is still a very good example to take a look.
+This repository hosts the configuration files used in ON.Lab CORD Pod deployment.
+This does not work in other environments.
+However, it is still a very good example to take a look.
 
 ## cord-olt.json
 
