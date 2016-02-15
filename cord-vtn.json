@@ -1,0 +1,26 @@
+ "org.onosproject.cordvtn" : {
+            "cordvtn" : {
+                "gatewayMac" : "00:00:00:00:00:01",
+                "localManagementIp" : "172.27.0.1/24",
+                "ovsdbPort" : "6640",
+                "sshPort" : "22",
+                "sshUser" : "hyunsun",
+                "sshKeyFile" : "~/.ssh/id_rsa",
+                "nodes" : [
+                    {
+                        "hostname" : "compute-01",
+                        "hostManagementIp" : "10.55.25.244/24",
+                        "dataPlaneIp" : "10.134.34.222/16",
+                        "dataPlaneIntf" : "eth1",
+                        "bridgeId" : "of:0000000000000001"
+                     },
+                     {
+                        "hostname" : "compute-02",
+                        "hostManagementIp" : "10.241.229.42/24",
+                        "dataPlaneIp" : "10.134.34.223/16",
+                        "dataPlaneIntf" : "eth1",
+                        "bridgeId" : "of:0000000000000002"
+                     }
+                ]
+            }
+        }
