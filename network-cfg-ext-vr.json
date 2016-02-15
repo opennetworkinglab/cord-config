@@ -1,0 +1,182 @@
+{
+    "ports" : {
+    "of:0000000000000001/5" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.0.1.254/24" ],
+            "vlan" : "-1"
+        },
+        {
+            "ips" : [],
+            "vlan" : "69"
+        },
+        {
+            "ips" : [],
+            "vlan" : "90"
+        }
+        ]
+    },
+    "of:0000000000000001/7" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.0.1.254/24" ],
+            "vlan" : "-1"
+        },
+        {
+            "ips" : [ "200.0.0.200/32" ],
+            "vlan" : "-1"
+        }
+        ]
+    },
+    "of:0000000000000001/65" : {
+        "interfaces" : [
+            {
+                "ips" : [],
+                "vlan" : "69"
+            }
+        ]
+    },
+    "of:0000000000000001/73" : {
+        "interfaces" : [
+            {
+                "ips" : [],
+                "vlan" : "90"
+            }
+        ]
+    },
+    "of:0000000000000002/5" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.0.2.254/24" ],
+            "vlan" : "-1"
+        },
+        {
+            "ips" : [ "0.0.0.0/0" ],
+            "vlan" : "-1"
+        },
+        {
+            "name" : "vrouterpeer1",
+            "ips" : [ "192.168.10.101/24" ],
+            "vlan" : "-1"
+        }
+        ]
+    }
+    },
+    "devices" : {
+        "of:0000000000000001" : {
+            "segmentrouting" : {
+                "name" : "Leaf-R1",
+                "nodeSid" : 101,
+                "routerIp" : "10.0.1.254",
+                "routerMac" : "00:00:00:00:01:80",
+                "isEdgeRouter" : true,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000002" : {
+            "segmentrouting" : {
+                "name" : "Leaf-R2",
+                "nodeSid" : 102,
+                "routerIp" : "10.0.2.254",
+                "routerMac" : "00:00:00:00:02:80",
+                "isEdgeRouter" : true,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000191" : {
+            "segmentrouting" : {
+                "name" : "Spine-R1",
+                "nodeSid" : 103,
+                "routerIp" : "192.168.0.11",
+                "routerMac" : "00:00:01:00:11:80",
+                "isEdgeRouter" : false,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000192" : {
+            "segmentrouting" : {
+                "name" : "Spine-R2",
+                "nodeSid" : 104,
+                "routerIp" : "192.168.0.22",
+                "routerMac" : "00:00:01:00:22:80",
+                "isEdgeRouter" : false,
+                "adjacencySids" : []
+            }
+        }
+    },
+    "hosts" : {
+        "00:02:c9:1e:b1:20/-1" : {
+            "basic": {
+                "ips": ["10.0.1.1"],
+                "location": "of:0000000000000001/5"
+            }
+        },
+        "00:02:c9:1e:b4:e0/-1" : {
+            "basic": {
+                "ips": ["10.0.1.2"],
+                "location": "of:0000000000000001/7"
+            }
+        },
+        "00:02:c9:1e:b4:60/-1" : {
+            "basic": {
+                "ips": ["10.0.2.1"],
+                "location": "of:0000000000000002/5"
+            }
+        },
+        "00:00:00:00:00:01/-1" : {
+            "basic": {
+                "ips": ["200.0.0.200"],
+                "location": "of:0000000000000001/7"
+            }
+        },
+        "00:00:00:00:00:02/-1" : {
+            "basic": {
+                "ips": ["0.0.0.0"],
+                "location": "of:0000000000000002/5"
+            }
+        }
+    },
+    "links" : {
+        "of:0000000000000001/1-of:0000000000000191/1" : {
+            "basic" : {}
+        },
+        "of:0000000000000001/3-of:0000000000000192/1" : {
+            "basic" : {}
+        },
+        "of:0000000000000002/1-of:0000000000000191/3" : {
+            "basic" : {}
+        },
+        "of:0000000000000002/3-of:0000000000000192/3" : {
+            "basic" : {}
+        },
+        "of:0000000000000191/1-of:0000000000000001/1" : {
+            "basic" : {}
+        },
+        "of:0000000000000192/1-of:0000000000000001/3" : {
+            "basic" : {}
+        },
+        "of:0000000000000191/3-of:0000000000000002/1" : {
+            "basic" : {}
+        },
+        "of:0000000000000192/3-of:0000000000000002/3" : {
+            "basic" : {}
+        }
+    },
+    "apps" : {
+        "org.onosproject.core" : {
+            "core" : {
+                "linkDiscoveryMode" : "STRICT"
+            }    
+        },
+        "org.onosproject.segmentrouting" : {
+            "segmentrouting" : {
+                "vRouterMacs" : [
+                    "00:00:00:00:00:02"
+                ],
+                "excludePorts" : [
+                    "vrouterpeer1"
+                ]
+            }
+        }
+    }
+}

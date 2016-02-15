@@ -1,0 +1,11 @@
+export ONOS_CELL="cord"
+export ONOS_NIC=10.90.0.*
+export OC1="10.90.0.5"
+export OC2="10.90.0.6"
+export OC3="10.90.0.7"
+export ONOS_APPS="drivers,openflow-base,netcfghostprovider,netcfglinksprovider,segmentrouting"
+export ONOS_USE_SSH=true
+export ONOS_USER=sdn
+export ONOS_GROUP=sdn
+export ONOS_WEB_PASS=karaf
+export ONOS_WEB_USER=karaf
