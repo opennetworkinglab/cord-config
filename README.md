@@ -51,9 +51,13 @@ A network-cfg.json example includes the following features
     - change x.x.x.x to uplink router IP
     - change y.y.y.y to vSG IP
 
-## cord-fabric.cell
+## cord-fabric-ext-vr.cell
 
 The cell configuration used for CORD fabric deployment
+
+## cord-fabric-int-vr.cell
+
+The cell configuration used for CORD fabric deployment plus vRouter integration
 
 ## cord-fabric-topo.svg
 
