@@ -45,6 +45,12 @@ A network-cfg.json example includes the following features
 * Interface exclusion
     - exclude vrouterpeer1
 
+## cord-fabric-int-vr.json
+
+* Same feature as above, plus SegmentRouting/vRouter integration
+    - change x.x.x.x to uplink router IP
+    - change y.y.y.y to vSG IP
+
 ## cord-fabric.cell
 
 The cell configuration used for CORD fabric deployment
