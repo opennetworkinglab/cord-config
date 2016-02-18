@@ -1,26 +1,45 @@
- "org.onosproject.cordvtn" : {
+{
+    "apps" : {
+        "org.onosproject.cordvtn" : {
             "cordvtn" : {
-                "gatewayMac" : "00:00:00:00:00:01",
+                "privateGatewayMac" : "00:00:00:00:00:01",
+                "publicGateways" : [
+                    {
+                        "gatewayIp" : "10.141.192.158",
+                        "gatewayMac" : "a4:23:05:34:56:78"
+                    }
+                ],
                 "localManagementIp" : "172.27.0.1/24",
                 "ovsdbPort" : "6640",
                 "sshPort" : "22",
-                "sshUser" : "hyunsun",
-                "sshKeyFile" : "~/.ssh/id_rsa",
+                "sshUser" : "root",
+                "sshKeyFile" : "/root/node_key",
                 "nodes" : [
                     {
                         "hostname" : "compute-01",
-                        "hostManagementIp" : "10.55.25.244/24",
-                        "dataPlaneIp" : "10.134.34.222/16",
-                        "dataPlaneIntf" : "eth1",
+                        "hostManagementIp" : "10.90.0.64/24",
+                        "dataPlaneIp" : "192.168.199.1/24",
+                        "dataPlaneIntf" : "mlx0",
                         "bridgeId" : "of:0000000000000001"
                      },
                      {
                         "hostname" : "compute-02",
-                        "hostManagementIp" : "10.241.229.42/24",
-                        "dataPlaneIp" : "10.134.34.223/16",
-                        "dataPlaneIntf" : "eth1",
+                        "hostManagementIp" : "10.90.0.65/24",
+                        "dataPlaneIp" : "192.168.199.2/24",
+                        "dataPlaneIntf" : "mlx0",
                         "bridgeId" : "of:0000000000000002"
                      }
                 ]
             }
+        },
+       "org.onosproject.openstackswitching" : {
+            "openstackswitching" : {
+                 "do_not_push_flows" : "true",
+                 "neutron_server" : "http://10.90.0.58:9696/v2.0/",
+                 "keystone_server" : "http://10.90.0.89:5000/v2.0/",
+                 "user_name" : "admin",
+                 "password" : "ADMIN_PASS"
+            }
         }
+    }
+}
