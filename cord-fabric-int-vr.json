@@ -10,6 +10,9 @@
             },
             {
                 "vlan" : "90"
+            },
+            {
+                "ips" : [ "X.X.X.X/32" ]
             }
         ]
     },
@@ -17,15 +20,13 @@
         "interfaces" : [
             {
                 "ips" : [ "10.0.1.254/24" ]
-            },
-            {
-                "ips" : [ "x.x.x.x/32" ]
             }
         ]
     },
     "of:0000000000000001/65" : {
         "interfaces" : [
             {
+                "name" : "fujitsu-olt",
                 "vlan" : "69"
             }
         ]
@@ -33,6 +34,7 @@
     "of:0000000000000001/73" : {
         "interfaces" : [
             {
+                "name" : "pmc-olt",
                 "vlan" : "90"
             }
         ]
@@ -110,9 +112,15 @@
                 "location": "of:0000000000000001/5"
             }
         },
+        "fa:16:3e:2d:d5:6a/-1" : {
+            "basic": {
+                "ips": ["Y.Y.Y.Y"],
+                "location": "of:0000000000000001/5"
+            }
+        },
         "00:02:c9:1e:b4:e0/-1" : {
             "basic": {
-                "ips": ["10.0.1.2", "y.y.y.y"],
+                "ips": ["10.0.1.2"],
                 "location": "of:0000000000000001/7"
             }
         },
@@ -158,7 +166,7 @@
         "org.onosproject.segmentrouting" : {
             "segmentrouting" : {
                 "vRouterMacs" : [
-                    "00:00:00:00:00:02"
+                    "a4:23:05:34:56:78"
                 ],
                 "vRouterId" : "of:0000000000000002",
                 "excludePorts" : [
