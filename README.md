@@ -12,7 +12,7 @@ OLT configuration
 
 VTN configuration
 
-## cord-fabric-ext-vr.json
+## cord-fabric-vr.json
 
 A network-cfg.json example includes the following features
 (works with ONOS after commit 852dabf100262d07475b82b8ddc3cc42afe370a9)
@@ -45,17 +45,16 @@ A network-cfg.json example includes the following features
 * Interface exclusion
     - exclude vrouterpeer1
 
-## cord-fabric-int-vr.json
+## cord-fabric-vr.json
 
 * Same feature as above, plus SegmentRouting/vRouter integration
-    - change x.x.x.x to uplink router IP
-    - change y.y.y.y to vSG IP
+    (Detail will be submitted later)
 
-## cord-fabric-ext-vr.cell
+## cord-fabric.cell
 
 The cell configuration used for CORD fabric deployment
 
-## cord-fabric-int-vr.cell
+## cord-fabric-vr.cell
 
 The cell configuration used for CORD fabric deployment plus vRouter integration
 

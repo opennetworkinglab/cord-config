@@ -9,10 +9,13 @@
                 "vlan" : "69"
             },
             {
-                "vlan" : "90"
+                "vlan" : "222"
             },
             {
-                "ips" : [ "X.X.X.X/32" ]
+                "ips" : [ "A.A.A.A/32" ]
+            },
+            {
+                "ips" : [ "B.B.B.B/32" ]
             }
         ]
     },
@@ -20,6 +23,13 @@
         "interfaces" : [
             {
                 "ips" : [ "10.0.1.254/24" ]
+            }
+        ]
+    },
+    "of:0000000000000001/30" : {
+        "interfaces" : [
+            {
+                "ips" : [ "C.C.C.C/32" ]
             }
         ]
     },
@@ -35,7 +45,7 @@
         "interfaces" : [
             {
                 "name" : "pmc-olt",
-                "vlan" : "90"
+                "vlan" : "222"
             }
         ]
     },
@@ -57,10 +67,18 @@
         "interfaces" : [
             {
                 "name" : "external-quagga",
-                "ips" : [ "10.231.254.202/30" ],
-                "mac" : "00:16:3e:b3:2e:3a"
+                "ips" : [ "10.231.254.202/30", "10.231.254.223/32" ],
+                "mac" : "00:16:3e:56:2b:48"
             }
-        ]
+        ],
+        "pimInterface" : {
+            "interfaceName" : "external-quagga",
+            "enabled" : true,
+            "helloInterval" : 1,
+            "holdTime" : 3,
+            "propagationDelay" : 500,
+            "overrideInterval" : 2500
+         }
     }
     },
     "devices" : {
@@ -112,9 +130,15 @@
                 "location": "of:0000000000000001/5"
             }
         },
-        "fa:16:3e:2d:d5:6a/-1" : {
+        "02:42:cf:8d:c0:82/-1" : {
             "basic": {
-                "ips": ["Y.Y.Y.Y"],
+                "ips": ["A.A.A.A"],
+                "location": "of:0000000000000001/5"
+            }
+        },
+        "02:42:cf:8d:c0:83/-1" : {
+            "basic": {
+                "ips": ["B.B.B.B"],
                 "location": "of:0000000000000001/5"
             }
         },
@@ -122,6 +146,12 @@
             "basic": {
                 "ips": ["10.0.1.2"],
                 "location": "of:0000000000000001/7"
+            }
+        },
+        "74:44:01:74:61:92/-1" : {
+            "basic": {
+                "ips": ["C.C.C.C"],
+                "location": "of:0000000000000001/30"
             }
         },
         "00:02:c9:1e:b4:60/-1" : {
