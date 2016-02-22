@@ -48,13 +48,13 @@ A network-cfg.json example includes the following features
 ## cord-fabric-vr.json
 
 * Same feature as above, plus SegmentRouting/vRouter integration
-    (Detail will be submitted later)
+    - [Detail explanation](https://rawgit.com/opennetworkinglab/cord-config/master/cord-fabric-vr.html)
 
-## cord-fabric.cell
+## onos-fabric.cell
 
 The cell configuration used for CORD fabric deployment
 
-## cord-fabric-vr.cell
+## onos-fabric-vr.cell
 
 The cell configuration used for CORD fabric deployment plus vRouter integration
 
