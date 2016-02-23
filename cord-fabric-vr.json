@@ -56,23 +56,16 @@
             }
         ]
     },
-    "of:0000000000000002/31" : {
-        "interfaces" : [
-            {
-                "name" : "internal-quagga"
-            }
-        ]
-    },
     "of:0000000000000002/32" : {
         "interfaces" : [
             {
-                "name" : "external-quagga",
+                "name" : "internet-router",
                 "ips" : [ "10.231.254.202/30", "10.231.254.223/32" ],
                 "mac" : "00:16:3e:56:2b:48"
             }
         ],
         "pimInterface" : {
-            "interfaceName" : "external-quagga",
+            "interfaceName" : "internet-router",
             "enabled" : true,
             "helloInterval" : 1,
             "holdTime" : 3,
@@ -213,7 +206,7 @@
                 "controlPlaneConnectPoint" : "of:0000000000000002/31",
                 "ospfEnabled" : "true",
                 "pimEnabled" : "true",
-                "interfaces" : [ "external-quagga" ]
+                "interfaces" : [ "internet-router" ]
             }
         }
     }
