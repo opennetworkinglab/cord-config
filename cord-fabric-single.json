@@ -1,0 +1,146 @@
+{
+    "ports" : {
+    "of:0000000000000001/5" : {
+        "interfaces" : [
+            {
+                "ips" : [ "10.0.1.254/24" ]
+            },
+            {
+                "vlan" : "69"
+            },
+            {
+                "vlan" : "222"
+            },
+            {
+                "ips" : [ "A.A.A.A/32" ]
+            },
+            {
+                "ips" : [ "B.B.B.B/32" ]
+            }
+        ]
+    },
+    "of:0000000000000001/7" : {
+        "interfaces" : [
+            {
+                "ips" : [ "10.0.1.254/24" ]
+            }
+        ]
+    },
+    "of:0000000000000001/65" : {
+        "interfaces" : [
+            {
+                "name" : "fujitsu-olt",
+                "vlan" : "69"
+            }
+        ]
+    },
+    "of:0000000000000001/73" : {
+        "interfaces" : [
+            {
+                "name" : "pmc-olt",
+                "vlan" : "222"
+            }
+        ]
+    },
+    "of:0000000000000001/13" : {
+        "interfaces" : [
+            {
+                "ips" : [ "10.0.1.254/24" ]
+            }
+        ]
+    },
+    "of:0000000000000001/32" : {
+        "interfaces" : [
+            {
+                "name" : "internet-router",
+                "ips" : [ "10.231.254.202/30" ],
+                "mac" : "00:16:3e:b3:2e:3a"
+            }
+        ],
+        "pimInterface" : {
+            "interfaceName" : "internet-router",
+            "enabled" : true,
+            "helloInterval" : 1,
+            "holdTime" : 3,
+            "propagationDelay" : 500,
+            "overrideInterval" : 2500
+         }
+    }
+    },
+    "devices" : {
+        "of:0000000000000001" : {
+            "segmentrouting" : {
+                "name" : "Leaf-R1",
+                "nodeSid" : 101,
+                "routerIp" : "10.0.1.254",
+                "routerMac" : "00:00:00:00:01:80",
+                "isEdgeRouter" : true,
+                "adjacencySids" : []
+            }
+        }
+    },
+    "hosts" : {
+        "00:02:c9:1e:b1:20/-1" : {
+            "basic": {
+                "ips": ["10.0.1.1"],
+                "location": "of:0000000000000001/5"
+            }
+        },
+        "02:42:cf:8d:c0:82/-1" : {
+            "basic": {
+                "ips": ["A.A.A.A"],
+                "location": "of:0000000000000001/5"
+            }
+        },
+        "02:42:cf:8d:c0:83/-1" : {
+            "basic": {
+                "ips": ["B.B.B.B"],
+                "location": "of:0000000000000001/5"
+            }
+        },
+        "00:02:c9:1e:b4:e0/-1" : {
+            "basic": {
+                "ips": ["10.0.1.2"],
+                "location": "of:0000000000000001/7"
+            }
+        },
+        "00:02:c9:1e:b4:60/-1" : {
+            "basic": {
+                "ips": ["10.0.1.3"],
+                "location": "of:0000000000000001/13"
+            }
+        }
+    },
+    "links" : {
+    },
+    "apps" : {
+        "org.onosproject.core" : {
+            "core" : {
+                "linkDiscoveryMode" : "STRICT"
+            }    
+        },
+        "org.onosproject.segmentrouting" : {
+            "segmentrouting" : {
+                "vRouterMacs" : [
+                    "a4:23:05:34:56:78"
+                ],
+                "vRouterId" : "of:0000000000000001",
+                "suppressSubnet" : [
+                    "of:0000000000000001/31", "of:0000000000000001/32"
+                ],
+                "suppressHost" : [
+                    "of:0000000000000001/65", "of:0000000000000001/73",
+                    "of:0000000000000001/31", "of:0000000000000001/32"
+                ]
+            }
+        },
+        "org.onosproject.router" : {
+            "router" : {
+                "controlPlaneConnectPoint" : "of:0000000000000001/31",
+                "ospfEnabled" : "true",
+                "pimEnabled" : "true",
+                "interfaces" : [ "internet-router" ]
+            }
+        }
+    }
+}

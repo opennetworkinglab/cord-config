@@ -50,6 +50,10 @@ A network-cfg.json example includes the following features
 * Same feature as above, plus SegmentRouting/vRouter integration
     - [Detail explanation](https://rawgit.com/opennetworkinglab/cord-config/master/cord-fabric-vr.html)
 
+## cord-fabric-single.json
+
+* Single switch + vRouter integration
+
 ## onos-fabric.cell
 
 The cell configuration used for CORD fabric deployment
