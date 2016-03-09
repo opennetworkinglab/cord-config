@@ -1,9 +1,10 @@
 export ONOS_CELL="onos-cord"
 export ONOS_NIC=10.90.0.*
-export OC1="10.90.0.6"
-export ONOS_APPS="drivers,openflow-base,olt,igmp,cordmcast"
-export ONOS_USE_SSH=true
-export ONOS_USER=sdn
-export ONOS_GROUP=sdn
+export OC1="10.90.0.8"
+export OC2="10.90.0.9"
+export OC3="10.90.0.10"
+export ONOS_APPS="drivers,openflow-base,olt"
+export ONOS_USER=ubuntu
+export ONOS_GROUP=ubuntu
 export ONOS_WEB_PASS=karaf
 export ONOS_WEB_USER=karaf
