@@ -1,5 +1,6 @@
 # Instruction of patching and running quagga
 
+```
 apt-get install wget gawk texinfo build-essential
 wget http://download.savannah.gnu.org/releases/quagga/quagga-0.99.23.tar.gz
 tar zxvf quagga-0.99.23.tar.gz
@@ -12,3 +13,4 @@ cd ..
 sudo cp zebra.conf /usr/local/etc
 sudo ./start-zebra.sh
 sudo ./stop-zebra.sh
+```
