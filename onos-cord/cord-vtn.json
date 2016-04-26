@@ -22,6 +22,11 @@
                     "user" : "admin",
                     "password" : "ADMIN_PASS"
                 },
+                "xos" : {
+                    "endpoint" : "http://10.90.0.58:80",
+                    "user" : "padmin@vicci.org",
+                    "password" : "letmein"
+                },
                 "nodes" : [
                     {
                         "hostname" : "compute-01",
