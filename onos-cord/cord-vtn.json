@@ -1,6 +1,6 @@
 {
     "apps" : {
-        "org.onosproject.cordvtn" : {
+        "org.opencord.vtn" : {
             "cordvtn" : {
                 "privateGatewayMac" : "00:00:00:00:00:01",
                 "publicGateways" : [
